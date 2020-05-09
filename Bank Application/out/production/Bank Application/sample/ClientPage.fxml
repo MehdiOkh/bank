@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="content" prefHeight="425.0" prefWidth="600.0" style="-fx-background-color: #16151E;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ClientPageController">
+   <children>
+      <TableView fx:id="tableView" layoutX="40.0" layoutY="98.0" prefHeight="298.0" prefWidth="520.0">
+         <columns>
+            <TableColumn fx:id="destination" prefWidth="166.0" text="From/To" />
+            <TableColumn fx:id="amount" prefWidth="183.0" text="Amount" />
+            <TableColumn fx:id="date" minWidth="0.0" prefWidth="170.0" text="Date" />
+         </columns>
+      </TableView>
+
+      <Pane layoutY="-1.0" prefHeight="58.0" prefWidth="600.0" style="-fx-background-color: #292939;">
+         <children>
+            <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="555.0" layoutY="14.0" onMouseClicked="#onQuitClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/sign-out-alt-solid.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children></Pane>
+      <JFXButton layoutX="397.0" layoutY="-1.0" onAction="#onBillPaymentClicked" prefHeight="58.0" prefWidth="162.0" style="-fx-background-color: #c7c7d0; -fx-background-radius: 0;" stylesheets="@ham.css" text="Bill Payment">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="transactionBut" layoutX="151.0" layoutY="-1.0" onAction="#onRecentTransactionClicked" prefHeight="58.0" prefWidth="162.0" style="-fx-background-color: #c7c7d0; -fx-background-radius: 0;" stylesheets="@ham.css" text="Recent Transactions">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="274.0" layoutY="-1.0" onAction="#onCardToCardClicked" prefHeight="58.0" prefWidth="162.0" style="-fx-background-color: #c7c7d0; -fx-background-radius: 0;" stylesheets="@ham.css" text="Card to Card">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <AnchorPane fx:id="moneyTransferPage" layoutX="189.0" layoutY="78.0" prefHeight="331.0" prefWidth="227.0" style="-fx-background-color: #c7c7d0;" visible="false">
+         <children>
+            <Label layoutX="18.0" layoutY="18.0" prefHeight="17.0" prefWidth="162.0" text="Destination Card Number :">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="cardNumber" labelFloat="true" layoutX="18.0" layoutY="46.0" prefHeight="25.0" prefWidth="190.0" promptText="Card Number" />
+            <Label layoutX="18.0" layoutY="101.0" prefHeight="17.0" prefWidth="162.0" text="Amount of Transfer :">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="transferAmount" labelFloat="true" layoutX="19.0" layoutY="127.0" prefHeight="25.0" prefWidth="190.0" promptText="Amount " />
+            <Label layoutX="18.0" layoutY="177.0" prefHeight="17.0" prefWidth="162.0" text="Second Password :">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXPasswordField fx:id="secondPass" labelFloat="true" layoutX="19.0" layoutY="203.0" prefHeight="25.0" prefWidth="190.0" promptText="Password" />
+            <JFXButton fx:id="cdcSubmit" layoutX="19.0" layoutY="252.0" onAction="#onTransferSubmit" prefHeight="34.0" prefWidth="190.0" style="-fx-background-color: #16151E;" text="Submit" textFill="#e8e8e8">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="billPage" layoutX="189.0" layoutY="78.0" prefHeight="331.0" prefWidth="227.0" style="-fx-background-color: #c7c7d0;" visible="false">
+         <children>
+            <Label layoutX="18.0" layoutY="18.0" prefHeight="17.0" prefWidth="162.0" text="Bill Number :">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="billNum" labelFloat="true" layoutX="18.0" layoutY="46.0" prefHeight="25.0" prefWidth="190.0" promptText="Bill Number" />
+            <Label fx:id="billDebt" layoutX="18.0" layoutY="101.0" prefHeight="17.0" prefWidth="162.0" text="Amount of Debt :">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="141.0" prefHeight="17.0" prefWidth="162.0" text="Second Password :">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXPasswordField fx:id="billPass" labelFloat="true" layoutX="19.0" layoutY="167.0" prefHeight="25.0" prefWidth="190.0" promptText="Password" />
+            <JFXButton layoutX="19.0" layoutY="252.0" onAction="#onBillPaymentSubmit" prefHeight="34.0" prefWidth="190.0" style="-fx-background-color: #16151E;" text="Submit" textFill="#e8e8e8">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="140.0" prefHeight="425.0" prefWidth="155.0" />
+      <JFXHamburger fx:id="ham" layoutX="6.0" layoutY="18.0" stylesheets="@ham.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXHamburger>
+      <Label fx:id="message" alignment="CENTER" layoutX="209.0" layoutY="378.0" prefHeight="17.0" prefWidth="190.0" visible="false">
+         <font>
+            <Font name="FontAwesome Regular" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

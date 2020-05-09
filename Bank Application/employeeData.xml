@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<EmployeeInfo>
+    <Employee>
+        <Username>mahdi</Username>
+        <Pass>123</Pass>
+        <Branch>Tabriz</Branch>
+    </Employee>
+    <Employee>
+        <Username>ali</Username>
+        <Pass>123</Pass>
+        <Branch>Tabriz</Branch>
+    </Employee>
+    <Employee>
+        <Username>mamad</Username>
+        <Pass>123</Pass>
+        <Branch>Tabriz</Branch>
+    </Employee>
+    <Employee>
+        <Username>hassan</Username>
+        <Pass>435</Pass>
+        <Branch>Tehran</Branch>
+    </Employee>
+</EmployeeInfo>

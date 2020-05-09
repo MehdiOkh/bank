@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="169.0" style="-fx-background-color: #e5e5ea;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ClientSidePaneController">
+   <children>
+      <AnchorPane prefHeight="115.0" prefWidth="154.0" style="-fx-background-color: #16151E;">
+         <children>
+            <ImageView fitHeight="95.0" fitWidth="91.0" layoutX="39.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/avatar2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="balance" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="189.0" style="-fx-background-color: #292939;" text="26890$" textFill="#239732">
+         <font>
+            <Font name="Bookman Old Style Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="name" alignment="CENTER" prefHeight="40.0" prefWidth="176.0" style="-fx-background-color: #525265;" text="Mahdi Okhravi" textFill="#d8ff89" />
+      <JFXComboBox fx:id="combobox" focusColor="#aeaeb9" onAction="#onSetComboBoxValue" prefHeight="27.0" prefWidth="181.0" promptText="Card Number" style="-fx-background-color: #7f7f90; -fx-background-radius: 0;" unFocusColor="#7f7f90">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <JFXButton prefHeight="60.0" prefWidth="181.0" style="-fx-background-color: #c7c7d0;" text="Information" textFill="#0d0d0d" />
+      <JFXToggleButton prefHeight="58.0" prefWidth="168.0" text="Notification" />
+   </children>
+</VBox>

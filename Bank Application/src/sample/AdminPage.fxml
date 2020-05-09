@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="content" prefHeight="425.0" prefWidth="600.0" style="-fx-background-color: #16151E;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminPageController">
+   <children>
+      <Pane layoutX="-1.0" prefHeight="88.0" prefWidth="473.0" style="-fx-background-color: #292939;">
+         <children>
+            <Label fx:id="title" alignment="CENTER" layoutX="114.0" layoutY="37.0" prefHeight="51.0" prefWidth="251.0" style="-fx-background-color: #dadada;" text="Welcome">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="32.0" fitWidth="41.0" layoutX="22.0" layoutY="28.0" onMouseClicked="#onQuitClicked" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
+               <image>
+                  <Image url="@../image/sign-out-alt-solid.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children></Pane>
+      <Pane layoutX="472.0" layoutY="88.0" prefHeight="337.0" prefWidth="128.0" style="-fx-background-color: #292939;">
+         <children>
+            <JFXButton layoutY="286.0" onAction="#onAddAccountClicked" prefHeight="51.0" prefWidth="128.0" style="-fx-background-color: #c7c7d0;" text="Add Account">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton layoutY="234.0" onAction="#onWithdrawFundClicked" prefHeight="51.0" prefWidth="128.0" style="-fx-background-color: #c7c7d0;" text="Withdraw Funds">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton layoutY="182.0" onAction="#onDepositFundClicked" prefHeight="51.0" prefWidth="128.0" style="-fx-background-color: #c7c7d0;" text="Deposit Funds">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton layoutY="130.0" onAction="#onNewClientClicked" prefHeight="51.0" prefWidth="128.0" style="-fx-background-color: #c7c7d0;" text="New Client">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <Label fx:id="branch" alignment="CENTER" layoutY="65.0" prefHeight="64.0" prefWidth="128.0" style="-fx-background-color: #333339;" textFill="#f2f2f2" />
+            <Label fx:id="empName" alignment="CENTER" layoutY="15.0" prefHeight="32.0" prefWidth="128.0" textFill="#d0d0d0" />
+         </children></Pane>
+      <ImageView fitHeight="88.0" fitWidth="85.0" layoutX="494.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/avatar2.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="newClientPage" layoutX="113.0" layoutY="88.0" prefHeight="337.0" prefWidth="251.0" style="-fx-background-color: #c7c7d0;" visible="false">
+         <children>
+            <Label fx:id="accNum" layoutX="11.0" layoutY="288.0" prefHeight="17.0" prefWidth="161.0" text="Account Number : " />
+            <JFXTextField fx:id="username" labelFloat="true" layoutX="45.0" layoutY="16.0" prefHeight="25.0" prefWidth="161.0" promptText="Identity Number" />
+            <JFXTextField fx:id="fund" labelFloat="true" layoutX="45.0" layoutY="158.0" prefHeight="25.0" prefWidth="161.0" promptText="Fund" />
+            <JFXPasswordField fx:id="pass" labelFloat="true" layoutX="45.0" layoutY="113.0" prefHeight="25.0" prefWidth="161.0" promptText="Password" />
+            <JFXButton layoutX="46.0" layoutY="249.0" onAction="#onNewClientSubmit" prefHeight="32.0" prefWidth="161.0" style="-fx-background-color: #16151E;" text="Submit" textFill="#eeeeee">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXPasswordField fx:id="secPass" labelFloat="true" layoutX="46.0" layoutY="206.0" prefHeight="25.0" prefWidth="161.0" promptText="Second Password" />
+            <JFXTextField fx:id="name" labelFloat="true" layoutX="47.0" layoutY="64.0" prefHeight="25.0" prefWidth="161.0" promptText="Name" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="depositPage" layoutX="113.0" layoutY="88.0" prefHeight="337.0" prefWidth="251.0" style="-fx-background-color: #c7c7d0;" visible="false">
+         <children>
+            <JFXTextField fx:id="dfAN" labelFloat="true" layoutX="44.0" layoutY="63.0" prefHeight="25.0" prefWidth="161.0" promptText="Account Number" />
+            <JFXButton layoutX="42.0" layoutY="212.0" onAction="#onDFSubmit" prefHeight="32.0" prefWidth="161.0" style="-fx-background-color: #16151E;" text="Submit" textFill="#dadada">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXTextField fx:id="dfF" labelFloat="true" layoutX="44.0" layoutY="134.0" prefHeight="25.0" prefWidth="161.0" promptText="Fund" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="withdrawPage" layoutX="113.0" layoutY="88.0" prefHeight="337.0" prefWidth="251.0" style="-fx-background-color: #c7c7d0;" visible="false">
+         <children>
+            <JFXTextField fx:id="wAN" labelFloat="true" layoutX="46.0" layoutY="74.0" prefHeight="25.0" prefWidth="161.0" promptText="Account Number" />
+            <JFXTextField fx:id="wF" labelFloat="true" layoutX="44.0" layoutY="143.0" prefHeight="25.0" prefWidth="161.0" promptText="Fund" />
+            <JFXButton layoutX="44.0" layoutY="215.0" onAction="#onWithdrawSubmit" prefHeight="32.0" prefWidth="161.0" style="-fx-background-color: #16151E;" text="Submit" textFill="#dddddd">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="addAccountPage" layoutX="113.0" layoutY="88.0" prefHeight="337.0" prefWidth="251.0" style="-fx-background-color: #c7c7d0;" visible="false">
+         <children>
+            <JFXTextField fx:id="addAccountIdNum" labelFloat="true" layoutX="39.0" layoutY="61.0" prefHeight="25.0" prefWidth="161.0" promptText="Identity Number" />
+            <JFXButton layoutX="37.0" layoutY="215.0" onAction="#onAddAccountSubmit" prefHeight="32.0" prefWidth="161.0" style="-fx-background-color: #16151E;" text="Submit" textFill="#dddddd">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXTextField fx:id="addAccFund" labelFloat="true" layoutX="37.0" layoutY="112.0" prefHeight="25.0" prefWidth="161.0" promptText="Fund" />
+            <JFXPasswordField fx:id="addAccSecPass" labelFloat="true" layoutX="39.0" layoutY="163.0" prefHeight="25.0" prefWidth="161.0" promptText="Second Pass" />
+            <Label fx:id="addAccNum" layoutX="15.0" layoutY="271.0" prefHeight="25.0" prefWidth="200.0" text="Account Number :" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="message" alignment="CENTER" layoutX="140.0" layoutY="396.0" prefHeight="17.0" prefWidth="200.0">
+         <font>
+            <Font name="FontAwesome Regular" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
